@@ -98,11 +98,9 @@ while game_is_on:
     if segments[0].distance(food) < 15:
         score += 1
         refresh()
-
-
-
-
-
-
+    if segments[0].xcor() > 280 or segments[0].xcor() < -280 or segments[0].ycor() > 280 or segments[0].ycor() < -280:
+        game_is_on = False
+        scoreboard.goto(0,0)
+        scoreboard.write(f"GAME OVER!! ", align="center", font=("Arial", 18, "normal"))
 
 screen.exitonclick()
